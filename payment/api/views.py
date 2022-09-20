@@ -3,10 +3,21 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import TemplateView
 from items.models import Item
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+MY_DOMAIN = "http://127.0.0.1:8000/"
+
+
+class SuccessView(TemplateView):
+    template_name = "success.html"
+
+
+class CancelView(TemplateView):
+    template_name = "cancel.html"
 
 
 class ItemsList(APIView):
@@ -36,7 +47,7 @@ class GoToPay(APIView):
             line_items=[
                 {
                     "price_data": {
-                        "currency": "Rub",
+                        "currency": item.currency,
                         "product_data": {
                             "name": item.name,
                         },
@@ -46,8 +57,8 @@ class GoToPay(APIView):
                 }
             ],
             mode="payment",
-            success_url="http://127.0.0.1:8000/",
-            cancel_url="http://127.0.0.1:8000/",
+            success_url=MY_DOMAIN + "success/",
+            cancel_url=MY_DOMAIN + "cancel/",
         )
 
         return JsonResponse(
