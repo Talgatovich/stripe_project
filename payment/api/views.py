@@ -13,14 +13,20 @@ MY_DOMAIN = "http://127.0.0.1:8000/"
 
 
 class SuccessView(TemplateView):
+    """Успешная оплата"""
+
     template_name = "success.html"
 
 
 class CancelView(TemplateView):
+    """Ошибка оплаты"""
+
     template_name = "cancel.html"
 
 
 class ItemsList(APIView):
+    """Информация обо всех товарах"""
+
     renderer_classes = [TemplateHTMLRenderer]
     template_name = "index.html"
 
@@ -30,6 +36,8 @@ class ItemsList(APIView):
 
 
 class ItemsDetail(APIView):
+    """Информация о конкретном товаре"""
+
     renderer_classes = [TemplateHTMLRenderer]
     template_name = "item_detail.html"
 
@@ -39,6 +47,8 @@ class ItemsDetail(APIView):
 
 
 class GoToPay(APIView):
+    """Получение Stripe Session Id"""
+
     @csrf_exempt
     def get(self, request, id):
         stripe.api_key = settings.STRIPE_PRIVATE_KEY

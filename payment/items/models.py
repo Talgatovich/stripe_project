@@ -7,6 +7,8 @@ CHOICES = (
 
 
 class Item(models.Model):
+    """Модель товара"""
+
     name = models.CharField("Название", max_length=100)
     description = models.TextField("Описание", max_length=1000)
     price = models.IntegerField(
