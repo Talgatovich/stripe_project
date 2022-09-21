@@ -1,9 +1,0 @@
-# from django_restframework import ModelSerializer
-# from items.models import Item
-
-
-# class ItemSerializer(ModelSerializer):
-
-#     class Meta:
-#         model = Item
-#         fields = "__all__"
