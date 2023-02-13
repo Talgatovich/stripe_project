@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title>Купить товары </title>
+</head>
+
+<body>
+    {% for item in items %}
+        <h1><a href = "{% url 'api:item_detail' item.id %}"> {{ item.name }} </a></h1>
+        <p>{{ item.description }}</p>
+        <p>{{ item.get_display_price }} {{ item.get_display_currency }}</p>
+        
+    {% endfor %}
+    
+</body>
+
+</html>
