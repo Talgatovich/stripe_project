@@ -76,3 +76,13 @@ python3 manage.py runserver
 
 ### Проект временно доступен по [ссылке](http://80.251.156.46)
 
+Доступ к админке:
+
+```
+login - admin
+password - admin
+```
+
+---
+
+Автор: [Ибятов Раиль](https://github.com/Talgatovich)
