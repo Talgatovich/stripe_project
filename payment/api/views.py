@@ -9,7 +9,7 @@ from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-MY_DOMAIN = "http://127.0.0.1:8000/"
+MY_DOMAIN = "http://80.251.156.46/"
 
 
 class SuccessView(TemplateView):

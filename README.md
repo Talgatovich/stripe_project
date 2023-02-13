@@ -51,11 +51,15 @@ python3 -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
-Перейти в директорию с файлом manage.py:
+В папке payment создать файл .env и добавить туда
 
 ```
-cd payment/
+STRIPE_PRIVATE_KEY=<Приватный ключ Stripe>
+STRIPE_PUBLIC_KEY=<Публичный ключ Stripe>
+SECRET_KEY=<Приватный ключ Django>
 ```
+
+Перейти в директорию с файлом manage.py
 
 Выполнить миграции:
 
@@ -70,5 +74,5 @@ python3 manage.py runserver
 ```
 Перейти по адресу http://127.0.0.1:8000/
 
-### Проект временно доступен по [ссылке](http://84.201.142.213:8000)
+### Проект временно доступен по [ссылке](http://80.251.156.46)
 
