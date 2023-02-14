@@ -13,6 +13,14 @@ git clone git@github.com:Talgatovich/stripe_project.git
 cd  stripe_project/
 
 ```
+В папке payment, рядом с файлом settings.py создать файл .env и добавить туда
+
+```
+STRIPE_PRIVATE_KEY=<Приватный ключ Stripe>
+STRIPE_PUBLIC_KEY=<Публичный ключ Stripe>
+SECRET_KEY=<Приватный ключ Django>
+```
+
 ### 1. Через Dockerfile
 
 #### Перейти в папку с Докерфайлом
@@ -50,13 +58,6 @@ python3 -m pip install --upgrade pip
 
 ```
 pip install -r requirements.txt
-```
-В папке payment создать файл .env и добавить туда
-
-```
-STRIPE_PRIVATE_KEY=<Приватный ключ Stripe>
-STRIPE_PUBLIC_KEY=<Публичный ключ Stripe>
-SECRET_KEY=<Приватный ключ Django>
 ```
 
 Перейти в директорию с файлом manage.py
